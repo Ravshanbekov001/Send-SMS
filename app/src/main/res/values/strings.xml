@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Send SMS</string>
+    <string name="message_here">Message here</string>
+    <string name="send">Send</string>
+    <string name="phone_number">Phone number</string>
+    <string name="message">Message</string>
+</resources>
