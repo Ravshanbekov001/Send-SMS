@@ -30,12 +30,12 @@ class MainActivity : AppCompatActivity() {
         binding.message.addTextChangedListener {
             binding.sendMessage.isEnabled = true
         }
+
         binding.sendMessage.setOnClickListener {
-            sendMessage()
+            checkPermission()
         }
     }
 
-    // Nomalum sabablarga ko`ra permission ni tekshirmayapti
     private fun checkPermission() {
         Dexter.withContext(this)
             .withPermission(Manifest.permission.SEND_SMS)
@@ -58,7 +58,7 @@ class MainActivity : AppCompatActivity() {
                 ) {
                     permissionToken!!.continuePermissionRequest()
                 }
-            })
+            }).check()
     }
 
     private fun sendMessage() {
